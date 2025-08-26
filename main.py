@@ -11,7 +11,7 @@ from app.utils.knowledge.knowledge_route import router as knowledge_router
 load_dotenv()
 
 app = FastAPI(
-    title="AdrianaBrill AI Service",
+    title="ShopSage AI Service",
     description="AI-powered e-commerce assistant with product suggestions and chat",
     version="1.0.0"
 )
@@ -33,7 +33,7 @@ app.include_router(knowledge_router)
 @app.get("/")
 async def root():
     return {
-        "message": "Welcome to AdrianaBrill AI Service",
+        "message": "Welcome to ShopSage AI Service",
         "endpoints": {
             "ai_suggestions": "/api/ai_suggestions",
             "chat": "/api/chat",
@@ -46,7 +46,7 @@ async def root():
 async def health_check():
     return JSONResponse(
         status_code=200,
-        content={"status": "healthy", "service": "adrianabrill-ai"}
+        content={"status": "healthy", "service": "shop-sage-ai"}
     )
 
 # Error handlers
